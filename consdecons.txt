@@ -1,0 +1,59 @@
+class Vehicle {
+    // Attributes
+    String type;
+    String brand;
+    int year;
+
+    // Default constructor
+    Vehicle() {
+        this.type = "Unknown";
+        this.brand = "Unknown";
+        this.year = 0;
+    }
+
+    // Parameterized constructor
+    Vehicle(String type, String brand, int year) {
+        this.type = type;
+        this.brand = brand;
+        this.year = year;
+    }
+
+    // Constructor overloading: another variation
+    Vehicle(String brand) {
+        this.type = "Unknown";
+        this.brand = brand;
+        this.year = 0;
+    }
+
+    // Method to simulate destruction (cleanup)
+    void destroy() {
+        System.out.println("Cleaning up Vehicle object: " + this.brand);
+        // Add cleanup code here (e.g., closing resources)
+    }
+
+    // Method to display details
+    void displayDetails() {
+        System.out.println("Type: " + type);
+        System.out.println("Brand: " + brand);
+        System.out.println("Year: " + year);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Using default constructor
+        Vehicle v1 = new Vehicle();
+        v1.displayDetails();
+
+        // Using parameterized constructor
+        Vehicle v2 = new Vehicle("Car", "Toyota", 2023);
+        v2.displayDetails();
+
+        // Using overloaded constructor
+        Vehicle v3 = new Vehicle("Honda");
+        v3.displayDetails();
+
+        // Simulating cleanup for one object
+        v2.destroy();
+    }
+}
