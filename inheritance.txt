@@ -1,0 +1,67 @@
+// Parent class (Superclass)
+class Animal {
+    // Attributes
+    String name;
+
+    // Constructor
+    Animal(String name) {
+        this.name = name;
+    }
+
+    // Method
+    void eat() {
+        System.out.println(name + " is eating.");
+    }
+
+    void sleep() {
+        System.out.println(name + " is sleeping.");
+    }
+}
+
+// Child class (Subclass)
+class Dog extends Animal {
+    // Constructor for Dog
+    Dog(String name) {
+        // Call the parent class constructor
+        super(name);
+    }
+
+    // Method specific to Dog
+    void bark() {
+        System.out.println(name + " is barking.");
+    }
+}
+
+// Another Child class
+class Cat extends Animal {
+    // Constructor for Cat
+    Cat(String name) {
+        // Call the parent class constructor
+        super(name);
+    }
+
+    // Method specific to Cat
+    void meow() {
+        System.out.println(name + " is meowing.");
+    }
+}
+
+// Main class
+public class Main {
+    public static void main(String[] args) {
+        // Creating objects of child classes
+        Dog dog = new Dog("Buddy");
+        Cat cat = new Cat("Kitty");
+
+        // Calling methods
+        dog.eat();
+        dog.bark();
+
+        cat.eat();
+        cat.meow();
+
+        // Both Dog and Cat can also call methods from the Animal class
+        dog.sleep();
+        cat.sleep();
+    }
+}
