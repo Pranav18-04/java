@@ -1,0 +1,20 @@
+public class ExceptionHandlingDemo {
+    public static void main(String[] args) {
+        try {
+            // Code that may throw an exception
+            int result = divide(10, 0); // Division by zero
+            System.out.println("Result: " + result);
+        } catch (ArithmeticException e) {
+            // Handling the exception
+            System.out.println("Error: Cannot divide by zero.");
+        } finally {
+            // Code that always executes, even if an exception occurs
+            System.out.println("Execution completed.");
+        }
+    }
+
+    // Method to perform division
+    public static int divide(int a, int b) throws ArithmeticException {
+        return a / b; // This can throw ArithmeticException
+    }
+}
